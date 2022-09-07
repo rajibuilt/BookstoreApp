@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+</head>
+<body>
+<div class="container my-5">
+  <h3> Add Books</h3>
+  <div class="card">
+    <div class="card-body">
+      <div class="col-md-10">
+        <form action="#" th:action="@{/books/add}" th:object="${books}" method="post">
+          <div class="row">
+            <div class="form-group col-md-8">
+              <label for="serialNo" class="col-form-label">Serial No</label> <input type="text" th:field="*{serialNo}" class="form-control" id="serialNo" placeholder="serialNo"> <span th:if="${#fields.hasErrors('serialNo')}" th:errors="*{serialNo}" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-8">
+              <label for="title" class="col-form-label">Title</label> <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="Title"> <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-8">
+              <label for="author" class="col-form-label">Author</label> <input type="text" th:field="*{author}" class="form-control" id="author" placeholder="author"> <span th:if="${#fields.hasErrors('author')}" th:errors="*{phoneNo}" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-8">
+              <label for="noOfPages" class="col-form-label">No of pages</label> <input type="text" th:field="*{noOfPages}" class="form-control" id="noOfPages" placeholder="noOfPages"> <span th:if="${#fields.hasErrors('noOfPages')}" th:errors="*{noOfPages}" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+              <input type="submit" class="btn btn-primary" value="Add Books">
+            </div>
+
+            <div class="form-group col-md-8"></div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
